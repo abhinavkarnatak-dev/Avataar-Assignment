@@ -2,27 +2,29 @@
 
 ## Project Overview
 
-This project uses **Stable Diffusion Inpainting** to place an object from an image with a white background into a text-conditioned scene. The goal is to generate realistic product images for e-commerce purposes, ensuring the object is integrated naturally into the scene.
+This project leverages **Stable Diffusion Inpainting** to seamlessly place an object from an image with a white background into a text-conditioned scene. The primary goal is to create realistic product images for e-commerce applications, ensuring the object integrates naturally within the specified environment.
 
 ---
 
 ## Installation
 
 ### 1. Clone the Repository
+To get started, clone the repository using the following command:
+
 ```bash
-git clone <repository-link>
-cd <repository-folder>
+git clone https://github.com/abhinavkarnatak-dev/Avataar-Assignment.git
+cd Avataar-Assignment
 ```
 
 ### 2. Install Dependencies
 
-Make sure you have `pip` installed, then install the dependencies by running:
+Ensure that you have `pip` installed, and then install the necessary dependencies by executing:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is not provided, manually install the required packages:
+If `requirements.txt` is unavailable, you can manually install the required packages:
 
 ```bash
 pip install torch diffusers accelerate transformers pillow
@@ -32,20 +34,22 @@ pip install torch diffusers accelerate transformers pillow
 
 ## Execution
 
-To generate an image, use the following command:
+To generate an image with an object placed in a text-conditioned scene, run the following command:
 
 ```bash
 python run.py --image ./input_image.jpg --text-prompt "product in a kitchen used in meal preparation" --output ./generated.png
 ```
 
 ### Command-Line Arguments
-- `--image`: Path to the input image (with the object on a white background).
-- `--text-prompt`: The scene description to condition the generated background.
-- `--output`: Path to save the final generated image.
+- `--image`: Specify the path to the input image (which should contain the object on a white background).
+- `--text-prompt`: Provide a descriptive text prompt to guide the generation of the background scene.
+- `--output`: Indicate the file path where the final generated image will be saved.
 
 ---
 
 ## Example Command
+
+Here’s an example command demonstrating how to use the script:
 
 ```bash
 python run.py --image ./example.jpg --text-prompt "product in a kitchen used in meal preparation" --output ./generated.png
@@ -56,40 +60,46 @@ python run.py --image ./example.jpg --text-prompt "product in a kitchen used in 
 ## Approach to Solving the Problem
 
 ### 1. Initial Setup
-- The task required using a generative model to place a product image into a scene specified by a text prompt.
-- I chose **Stable Diffusion Inpainting** to mask the object and generate the scene around it.
+- The objective was to utilize a generative model to insert a product image into a scene dictated by a text prompt.
+- I implemented **Stable Diffusion Inpainting** to create a mask for the object, allowing for the generation of an appropriate background.
 
-### 2. Realism Challenges
-- **Aspect Ratio & Placement**: Ensuring the object was scaled properly and placed naturally in the generated scene.
-- **Lighting Consistency**: Aligning the lighting and shadows of the object with the scene.
+### 2. Challenges in Achieving Realism
+- **Aspect Ratio & Placement**: It was crucial to ensure that the object was correctly scaled and positioned naturally within the scene.
+- **Lighting Consistency**: Maintaining consistent lighting and shadows between the object and the generated background proved to be a challenge.
 
 ---
 
 ## Results
 
+### Example Image
+
+<div>
+    <img src="./image.jpg" alt="Generated Image" width="600" height="400">
+</div>
+
 ### Generated Image
 
 <div>
-    <img src="./generated.png" alt="Example Image" width="600" height="400">
+    <img src="./generated.png" alt="Generated Image" width="600" height="400">
 </div>
 
-- The object was successfully placed in the scene, aligning with the prompt and maintaining realism.
+- The image successfully integrates the object into the scene, aligning with the provided prompt and exhibiting a realistic appearance.
 
 ---
 
 ## Challenges & Improvements
 
-### Challenges
-- **Aspect Ratio**: Incorrect placement and scaling of the object in the scene during initial tests.
-- **Lighting Mismatch**: Some generated scenes had inconsistent lighting between the object and the scene.
+### Challenges Encountered
+- **Aspect Ratio Issues**: Initial tests revealed improper scaling and placement of the object within the scene.
+- **Lighting Inconsistency**: Some generated images displayed mismatched lighting between the object and the surrounding scene.
 
-### Improvements
-- Used a more precise **text-prompt** to improve the generated scene.
-- Fine-tuned the **masking process** to preserve the object’s details better.
+### Improvements Made
+- Employed a more descriptive **text prompt** to enhance the relevance of the generated scene.
+- Fine-tuned the **masking process** to better preserve the object's intricate details.
 
-
+---
 
 ## Conclusion
 
-This project demonstrates how generative AI can automate product photography for e-commerce. While it produces promising results, further refinements are needed in ensuring aspect ratio and lighting consistency to achieve a higher level of realism.
+This project showcases the potential of generative AI in automating product photography for e-commerce. While the results are promising, further refinements are essential to ensure better control over aspect ratio and lighting consistency, ultimately achieving a higher degree of realism.
 ```
