@@ -69,7 +69,10 @@ python run.py --image ./example.jpg --text-prompt "product in a kitchen used in 
 
 ### Generated Image
 
-- (Attach the generated image here)
+<div>
+    <img src="./generated.png" alt="Example Image" width="600" height="400">
+</div>
+
 - The object was successfully placed in the scene, aligning with the prompt and maintaining realism.
 
 ---
